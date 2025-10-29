@@ -1,15 +1,7 @@
 "use client";
 import React from "react";
 import styles from "./card.module.css";
-import {
-  Wallet,
-  TrendingDown,
-  TrendingUp,
-  Target,
-  ArrowUpRight,
-  ArrowDownRight,
-  Minus,
-} from "lucide-react";
+import { Wallet, TrendingDown, TrendingUp, Target, ArrowUpRight, ArrowDownRight, Minus, } from "lucide-react";
 
 export default function CardFinancas({ tipo, valor, observacao = "", percentual }) {
   // Deriva título, classe e ícone principal a partir do tipo
@@ -45,8 +37,8 @@ export default function CardFinancas({ tipo, valor, observacao = "", percentual 
     percentual === undefined || percentual === null
       ? null
       : typeof percentual === "string"
-      ? Number(percentual)
-      : percentual;
+        ? Number(percentual)
+        : percentual;
 
   let badge = null;
   if (pct !== null && !Number.isNaN(pct)) {
@@ -58,8 +50,8 @@ export default function CardFinancas({ tipo, valor, observacao = "", percentual 
     const variantClass = isUp
       ? styles.percentualUp
       : isDown
-      ? styles.percentualDown
-      : styles.percentualNeutral;
+        ? styles.percentualDown
+        : styles.percentualNeutral;
 
     const Icon = isUp ? ArrowUpRight : isDown ? ArrowDownRight : Minus;
 
