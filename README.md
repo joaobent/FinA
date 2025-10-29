@@ -1,5 +1,3 @@
-# FinA
-
 # FinA — Gestor de Despesas Pessoais com IA
 
 > Objetivo: lançar um MVP web que classifica despesas automaticamente, gera insights de economia e envia alertas. Monetização via assinatura mensal e créditos.
