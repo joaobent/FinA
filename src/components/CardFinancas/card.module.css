@@ -1,0 +1,193 @@
+/* ====== Tokens (cores, raio, sombras) ================================ */
+
+/* Dark mode automático */
+
+/* ====== Cartão base =================================================== */
+.cardBase {
+  cursor:default;
+  --bg: var(--surface-elev);
+  --fg: var(--text);
+  --muted: var(--text-muted);
+
+  width: clamp(260px, 30vw, 340px);
+  min-height: 150px;
+  border-radius: var(--radius-xl);
+  background: var(--bg);
+  color: var(--fg);
+  padding: var(--spacing-3);
+  margin: var(--spacing-2);
+  box-shadow: var(--shadow-1), var(--shadow-2);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-column-gap: var(--spacing-2);
+  align-content: start;
+
+  /* suavidade */
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    border-color 0.18s ease, background-color 0.18s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cardBase:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1), 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.cardBase:focus-within {
+  box-shadow: var(--shadow-1), var(--shadow-2), var(--ring);
+  outline: none;
+}
+
+/* ====== Conteúdo ====================================================== */
+.icone {
+  grid-row: 1 / span 2;
+  align-self: start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--muted, #eee);
+  color: var(--fg);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.16s ease;
+}
+
+.cardBase:hover .icone {
+  transform: scale(1.02);
+}
+
+.titulo {
+  grid-column: 2;
+  color: var(--fg);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  margin: 4px 0 6px;
+}
+
+.valor {
+  grid-column: 2;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.observacao {
+  grid-column: 1 / -1;
+  margin-top: var(--spacing-2);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* ====== Variantes por tipo =========================================== */
+/* Cada variante só troca tokens; o layout fica consistente. */
+
+.saldoDisponivel {
+  --bg: var(--saldo-bg);
+  --muted: color-mix(in oklab, var(--saldo-val) 55%, #0000);
+}
+.saldoDisponivel > .icone {
+  background: var(--saldo-weak);
+  color: var(--saldo-ac);
+}
+.saldoDisponivel > .valor {
+  color: var(--saldo-val);
+}
+
+.despesaTotal {
+  --bg: var(--despesa-bg);
+  --muted: color-mix(in oklab, var(--despesa-val) 55%, #0000);
+}
+.despesaTotal > .icone {
+  background: var(--despesa-weak);
+  color: var(--despesa-ac);
+}
+.despesaTotal > .valor {
+  color: var(--despesa-val);
+}
+
+.rendaMensal {
+  --bg: var(--renda-bg);
+  --muted: color-mix(in oklab, var(--renda-val) 55%, #0000);
+}
+.rendaMensal > .icone {
+  background: var(--renda-weak);
+  color: var(--renda-ac);
+}
+.rendaMensal > .valor {
+  color: var(--renda-val);
+}
+
+.metasEconomia {
+  --bg: var(--metas-bg);
+  --muted: color-mix(in oklab, var(--metas-val) 55%, #0000);
+}
+.metasEconomia > .icone {
+  background: var(--metas-weak);
+  color: var(--metas-ac);
+}
+.metasEconomia > .valor {
+  color: var(--metas-val);
+}
+
+.header {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* Badge de percentual */
+.percentual {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--text, #1f1f1f);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+  white-space: nowrap;
+}
+
+/* Variações automáticas (usa tokens definidos antes) */
+.percentualUp {
+  background: var(--renda-weak, #d9f7d9);
+  color: var(--renda-ac, #1d8a2f);
+}
+.percentualDown {
+  background: var(--despesa-weak, #ffd9d9);
+  color: var(--despesa-ac, #e03131);
+}
+.percentualNeutral {
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--text-muted, #5f5f5f);
+}
+
+/* Ajuste do layout da grade para acomodar header */
+.cardBase {
+  grid-template-rows: auto auto 1fr auto; /* ícone + header + valor + observação */
+}
+
+.titulo {
+  margin: 2px 0 0; /* título mais justo por causa do badge */
+}
+
+/* ====== Acessibilidade / Motion ====================================== */
+@media (prefers-reduced-motion: reduce) {
+  .cardBase,
+  .cardBase:hover,
+  .icone {
+    transition: none;
+    transform: none;
+  }
+}
