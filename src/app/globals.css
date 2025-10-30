@@ -53,3 +53,43 @@ body {
 	flex-direction: column;
 	height: 100vh;
 }
+:root {
+  /* base */
+  --radius-xl: 16px;
+  --spacing-1: 6px;
+  --spacing-2: 10px;
+  --spacing-3: 14px;
+
+  /* superfícies e texto (claro) */
+  --surface: #ffffff;
+  --surface-elev: #ffffff;
+  --text: #1f1f1f;
+  --text-muted: #5f5f5f;
+
+  /* sombras em camadas (suaves) */
+  --shadow-1: 0 2px 6px rgba(0,0,0,.06);
+  --shadow-2: 0 8px 24px rgba(0,0,0,.08);
+  --ring: 0 0 0 3px rgba(54, 131, 255, .20); /* foco */
+
+  /* variantes (ajuste fácil do tema) */
+  --saldo-bg:  #e8f2ff;  /* azul suave */
+  --saldo-weak:#d7e6ff;
+  --saldo-ac:  #2a66ff;
+  --saldo-val: #2147a4;
+
+  --despesa-bg:  #ffe8e8; /* vermelho suave */
+  --despesa-weak:#ffd9d9;
+  --despesa-ac:  #e03131;
+  --despesa-val: #b12323;
+
+  --renda-bg:  #e9ffe8;   /* verde suave */
+  --renda-weak:#d9f7d9;
+  --renda-ac:  #1d8a2f;
+  --renda-val: #23a236;
+
+  --metas-bg:  #f3e8ff;   /* roxo suave */
+  --metas-weak:#e9d9ff;
+  --metas-ac:  #7b2cbf;
+  --metas-val: #6a21a7;
+}
+
