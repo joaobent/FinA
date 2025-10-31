@@ -5,7 +5,7 @@ import styles from './home.module.css'
 export default function Home() {
   return (
     <div className={styles.a}>
-      <h1>Tela homeA</h1>
+      <h1>Tela home</h1>
       <CardFinancas
         tipo="renda"
         valor="R$ 8.250,00"
