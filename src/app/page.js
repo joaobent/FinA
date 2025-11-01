@@ -130,7 +130,7 @@ export default function Home() {
         <div className={styles.insightsContainer}>
           <Reveal delay={0.1}>
             <div className={styles.insightsImage}>
-                <img src="/images/dashboard-preview.jpg"/>
+              <img src="/images/dashboard-preview.jpg" />
             </div>
           </Reveal>
 
@@ -174,6 +174,44 @@ export default function Home() {
           <div className={styles.tituloPlano}>
             <h2 className={styles.parPlano}>Escolha o plano ideal para você</h2>
             <p>Comece gratuitamente e faça upgrade quando precisar de mais recursos</p>
+
+            <div className={styles.planosContainer}>
+              <div className={styles.planosCards}>
+                <h3>Gratuito</h3>
+                <p className={styles.subtitulo}>Ideal para começar</p>
+                <h2>R$0<span>/mês</span></h2>
+                <ul>
+                  <li>✅ Até 50 registros</li>
+                  <li>✅ 1 relatório mensal com IA</li>
+                  <li>✅ Envio automático</li>
+                  <li>✅ Gráficos básicos</li>
+                </ul>
+
+                <button className={styles.botaoGratis}>Começar</button>
+              </div>
+
+              <div className={`${styles.planosCards} ${styles.planoPremium}`}>
+                <div className={styles.popular}>Mais Popular</div>
+                <h3>Premium</h3>
+                <p className={styles.subtitulo}>Para quem quer economizar de verdade</p>
+                <h2>R$19,90<span>/mês</span></h2>
+
+                <ul>
+                  <li>✅ Registros ilimitados</li>
+                  <li>✅ Análises ilimitadas com IA</li>
+                  <li>✅ Alertas automáticos no WhatsApp</li>
+                  <li>✅ Exportação de relatórios PDF</li>
+                  <li>✅ Recomendações personalizadas</li>
+                  <li>✅ Suporte prioritário</li>
+                </ul>
+
+                <button className={styles.botaoPremium}>Assinar Premium</button>
+
+              </div>
+            </div>
+            <p className={styles.rodape}>
+              Todos os planos incluem 14 dias de garantia. Cancele quando quiser.
+            </p>
           </div>
         </Reveal>
       </section>

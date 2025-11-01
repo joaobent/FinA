@@ -439,7 +439,7 @@
 
 .insightsImage img {
   
-  max-width: 800px; /* imagem maior */
+  max-width: 700px; /* imagem maior */
   aspect-ratio: 16 / 9;
   border-radius: 18px;
   object-fit: cover;
@@ -593,12 +593,146 @@
   font-weight: 800;
   color: #0f172a;
   margin-bottom: 10px;
+  text-align: center;
 }
 
-.parPlano {
-  font-size: 15px;
-  color: #475569;
+.tituloPlano p {
+  font-size: 1rem;
+  color: #666;    
+  max-width: 600px;  
+  margin: 0 auto;   
+  line-height: 3; 
+  
+}
+
+/* --------- seção cards----------- */
+.planosContainer {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+}
+
+/* ===== CARD PADRÃO ===== */
+.planosCards {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  padding: 60px;
+  text-align: left;
+  width: 340px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.planosCards:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.planosCards h3 {
+  color: #043927;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.subtitulo {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.planosCards h3,
+.planosCards h2 {
+  line-height: 1.4;
+}
+
+.planosCards h2 {
+  font-size: 2.2rem;
+  color: #043927;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.planosCards h2 span {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.planosCards ul {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+  margin: 1.5rem 0;
+  line-height: 2;
+}
+
+/* ===== BOTÕES ===== */
+.botaoGratis,
+.botaoPremium {
+  border: none;
+  border-radius: 10px;
+  padding: 0.9rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.botaoGratis {
+  background: #e9f7ef;
+  color: #035237;
+}
+
+.botaoGratis:hover {
+  background: #36b466;
+  color: white;
+}
+
+/* ===== CARD PREMIUM ===== */
+.planoPremium {
+  border: 1px solid #09ad71;
+  background: #f0fff7;
+  position: relative;
+  box-shadow: 0 0 80px rgba(16, 155, 104, 0.2);
+}
+
+.popular {
+  background: #16a34a;
+  color: white;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 20px;
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.85rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.botaoPremium {
+  background: #0fa46e;
+  color: white;
+}
+
+.botaoPremium:hover {
+  background: #0c8b5c;
+}
+
+.rodape {
+  text-align: center;
+  color: #6b7280; 
+  font-size: 0.8rem;
+  margin-top: 1rem; 
+  margin-bottom: 3rem; 
   line-height: 1.5;
+  font-size: 0.8rem !important;
+
 }
 
 /* === Responsividade === */
