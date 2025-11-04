@@ -142,10 +142,10 @@ float cnoise(vec3 P){
 `;
 
 const Beams = ({
-    beamWidth = 0.3,
+    beamWidth = 0.7,
     beamHeight = 25,
     beamNumber = 43,
-    lightColor = '#50f250',
+    lightColor = '#00ff00ff',
     speed = 3.4,
     noiseIntensity = 0.8,
     scale = 0.23,
@@ -196,7 +196,7 @@ const Beams = ({
                 },
                 material: { fog: true },
                 uniforms: {
-                    diffuse: new THREE.Color(...hexToNormalizedRGB('#000000')),
+                    diffuse: new THREE.Color(...hexToNormalizedRGB('#2ee42eff')),
                     time: { shared: true, mixed: true, linked: true, value: 0 },
                     roughness: 0.3,
                     metalness: 0.3,
@@ -216,7 +216,7 @@ const Beams = ({
                 <DirLight color={lightColor} position={[0, 3, 10]} />
             </group>
             <ambientLight intensity={1} />
-            <color attach="background" args={['#000']} />
+            <color attach="background" args={['#d1d1d1ff']} />
             <PerspectiveCamera makeDefault position={[0, 0, 20]} fov={30} />
         </CanvasWrapper>
     );

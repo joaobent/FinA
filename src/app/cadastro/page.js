@@ -1,11 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
-import styles from "./login.module.css";
-import Beams from "./animation.js"
+import styles from "./cadastro.module.css";
+import Beams from "../login/animation.js"
 import Link from "next/link";
 import { ArrowBigLeftDash, EyeOff, Eye } from "lucide-react";
 
-export default function LoginPage() {
+export default function CadastroPage() {
     const [showPassword, setShowPassword] = useState(false);
 
     useEffect(() => {
@@ -24,12 +24,12 @@ export default function LoginPage() {
             {/* Lado direito */}
             <div className={styles.right}>
                 <div className={styles.formContainer}>
-                    <h1 className={styles.welcome}>Bem-Vindo novamente!</h1>
+                    <h1 className={styles.welcome}>Cadastrar-se</h1>
                     <p className={styles.description}>
-                        Entre com sua conta para continuar sua jornada no FinA
+                        Crie e economize, inicie sua jornada na FinA
                     </p>
-{/* 
-                    <div className={styles.socials}>
+
+                    {/* <div className={styles.socials}>
                         <button className={styles.socialButton}>Sign in with Google</button>
                         <button className={styles.socialButton}>Sign in with Google</button>
                         <button className={styles.socialButton}>Sign in with Google</button>
@@ -41,7 +41,7 @@ export default function LoginPage() {
 
                     <form className={styles.form}>
                         <label>Email *</label>
-                        <input type="email" placeholder="Entre com seu email" />
+                        <input type="email" placeholder="Cadastre seu email" />
 
                         <div className={styles.passwordField}>
                             <label>Senha *</label>
@@ -58,13 +58,26 @@ export default function LoginPage() {
                                     {showPassword ? <EyeOff /> : <Eye />}
                                 </button>
                             </div>
-                            <a href="#" className={styles.forgotPassword}>
-                                Esqueceu sua senha?
-                            </a>
+                        </div>
+                        <div className={styles.passwordField}>
+                            <label>Confirme sua senha *</label>
+                            <div className={styles.passwordInput}>
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    placeholder="********"
+                                />
+                                <button
+                                    type="button"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                    className={styles.eyeButton}
+                                >
+                                    {showPassword ? <EyeOff /> : <Eye />}
+                                </button>
+                            </div>
                         </div>
 
                         <button type="submit" className={styles.signInButton}>
-                            Entrar
+                            Criar conta
                         </button>
 
                         {/* <button type="button" className={styles.magicLink}>
@@ -72,7 +85,7 @@ export default function LoginPage() {
                         </button> */}
 
                         <p className={styles.signupText}>
-                            Não tem uma conta? <Link href="../cadastro">Cadastre-se</Link>
+                            Já tem uma conta? <Link href="../login">Entrar</Link>
                         </p>
                     </form>
                 </div>

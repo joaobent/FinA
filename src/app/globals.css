@@ -53,6 +53,8 @@ body {
 	flex-direction: column;
 	height: 100vh;
 }
+
+*{box-sizing: border-box;}
 :root {
   /* base */
   --radius-xl: 16px;
