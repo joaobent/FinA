@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import styles from "./header.module.css";
+import Link from "next/link";
+
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -28,7 +30,10 @@ export default function Header() {
                 </button>
             </div>
             <div className={styles.right}>
-                <button className={styles.toEnter}>Entrar</button>
+                <Link href="/login">
+                    <button className={styles.toEnter}>Entrar</button>
+                </Link>
+
                 <button className={styles.getStarted}>Começar Grátis</button>
             </div>
         </header>
