@@ -1,0 +1,338 @@
+/* ===== Base ===== */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    background-color: #486154;
+}
+
+/* ===== LADO ESQUERDO (background/Beams) ===== */
+.left {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        width: 50%;
+        height: 100vh;
+        color: white;
+        overflow: hidden;
+    }
+}
+
+.left {
+    width: 50vw;
+    height: 100%;
+    position: relative;
+}
+
+.backButton {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    transition: 0.25s;
+    z-index: 10;
+    font-size: 0.9rem;
+}
+
+.backButton:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* ===== LADO DIREITO (painel do login) ===== */
+.right {
+    background-color: #222e27;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    transition: 0.3s;
+}
+
+/* ===== Layout flutuante em telas médias ===== */
+@media (max-width: 990px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .right {
+        width: 85vw;
+        max-width: 500px;
+        height: auto;
+        margin: 10vh auto;
+        border-radius: 16px;
+        background-color: rgba(34, 46, 39, 0.92);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        position: absolute;
+        z-index: 5;
+        padding: 2rem 1.5rem;
+    }
+
+    .formContainer {
+        max-width: none;
+    }
+}
+
+/* ===== Telas pequenas (celulares) ===== */
+@media (max-width: 600px) {
+    .right {
+        width: 90vw;
+        height: auto;
+        margin: 8vh auto;
+        padding: 1.8rem 1rem;
+        border-radius: 12px;
+    }
+
+    .formContainer {
+        max-width: 100%;
+    }
+
+    .backButton {
+        font-size: 0.8rem;
+        padding: 0.4rem 1rem;
+    }
+}
+
+/* ===== Conteúdo do formulário ===== */
+.formContainer {
+    max-width: 380px;
+    width: 100%;
+    color: white;
+}
+
+/* ===== Textos ===== */
+.welcome {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    text-align: center;
+    color: #a1a1aa;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ===== Social buttons ===== */
+.socials {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.2rem;
+    flex-direction: column;
+}
+
+.socialButton {
+    background: transparent;
+    border: 1px solid #27272a;
+    color: white;
+    padding: 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.socialButton:hover {
+    background-color: #1a1a1a;
+}
+
+@media (min-width: 480px) {
+    .socials {
+        flex-direction: row;
+    }
+}
+
+/* ===== Divider ===== */
+.divider {
+    position: relative;
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.75rem;
+    margin: 1.5rem 0;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: #27272a;
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+/* ===== Form ===== */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.form label {
+    color: #a1a1aa;
+    font-size: 0.85rem;
+}
+
+.form input {
+    background: #111;
+    border: 1px solid #27272a;
+    border-radius: 6px;
+    padding: 0.6rem 0.75rem;
+    color: white;
+    outline: none;
+    transition: 0.2s;
+    font-size: 0.9rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form input:focus {
+    border-color: #25eb77;
+}
+
+/* ===== Campo de senha ===== */
+.passwordField {
+    display: flex;
+    flex-direction: column;
+}
+
+.passwordInput {
+    position: relative;
+    width: 100%;
+}
+
+.eyeButton {
+    position: absolute;
+    right: 0.6rem;
+    top: 0.4rem;
+    background: none;
+    border: none;
+    color: #a1a1aa;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.eyeButton:hover {
+    color: white;
+}
+
+.forgotPassword {
+    text-align: right;
+    font-size: 0.8rem;
+    color: #3bf699;
+    text-decoration: none;
+}
+
+.forgotPassword:hover {
+    text-decoration: underline;
+}
+
+/* ===== Botões ===== */
+.signInButton {
+    background-color: #25eb77;
+    color: white;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 0.4rem;
+    transition: 0.2s;
+}
+
+.signInButton:hover {
+    background-color: #1dd865;
+}
+
+.magicLink {
+    background: none;
+    border: none;
+    color: #60fa8e;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.magicLink:hover {
+    text-decoration: underline;
+}
+
+.signupText {
+    color: #a1a1aa;
+    text-align: center;
+    margin-top: 1.2rem;
+    font-size: 0.85rem;
+}
+
+.signupText a {
+    color: #3bf68f;
+    text-decoration: none;
+}
+
+.signupText a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Responsividade adicional ===== */
+@media (max-width: 480px) {
+    .welcome {
+        font-size: 1.4rem;
+    }
+
+    .description {
+        font-size: 0.85rem;
+    }
+
+    .signInButton,
+    .magicLink,
+    .socialButton {
+        font-size: 0.85rem;
+        padding: 0.55rem;
+    }
+
+    .form input {
+        font-size: 0.85rem;
+    }
+
+    .forgotPassword {
+        font-size: 0.75rem;
+    }
+
+    .signupText {
+        font-size: 0.8rem;
+    }
+}

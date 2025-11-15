@@ -93,3 +93,7 @@ body {
   --metas-val: #6a21a7;
 }
 
+body.login header,
+body.login footer {
+  display: none;  
+}
